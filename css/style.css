@@ -69,7 +69,7 @@ legend                  {display: none;}
 
 
 /* IMAGES */
-#logo                   {width: 240px;}
+#logo                   {width: 240px; height: 130px;}
 #companies              {width:800px; height: 50px;}
 hr                      {height: 12px; background: white url(../img/hr.png) no-repeat scroll 50% 50%; color: transparent;}
 
