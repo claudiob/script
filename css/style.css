@@ -29,6 +29,7 @@ h3                      {font-size: 1.25em;}
 
 /* COLORS AND BACKGROUNDS */
 body                    {background-color: #fff;}
+/* body                 {background-image: url(../img/coffee_stain.gif); background-repeat: no-repeat; background-position: -55px -55px;} */
 h1, label               {color: #222;}
 body                    {color: #555;}
 form                    {color: #999;}
@@ -54,7 +55,8 @@ input                   {padding-left: 3px; padding-right: 3px;}
 
 /* HEIGHT */
 h1, h2                  {margin-top: 45px; margin-bottom: 30px; }
-img, form               {padding-top: 20px; padding-bottom: 20px;}
+img                     {padding-bottom: 40px;}
+form                    {padding-top: 20px; padding-bottom: 20px;}
 .wilder, form           {margin-bottom: 20px;}
 h3                      {margin-top: 5px; margin-bottom: 5px}
 input                   {padding-top: 3px; padding-bottom: 3px;}
@@ -69,7 +71,7 @@ legend                  {display: none;}
 
 
 /* IMAGES */
-#logo                   {width: 240px; height: 130px;}
+#logo                   {width: 800px; height: 160px;}
 #companies              {width:800px; height: 50px;}
 hr                      {height: 12px; background: white url(../img/hr.png) no-repeat scroll 50% 50%; color: transparent;}
 
