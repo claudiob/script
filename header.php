@@ -8,7 +8,7 @@
   <meta name="language" content="es" />
   <meta name="robots" content="all" />
   <meta name="description" content="Ponemos en contacto guionistas emergentes con productoras de cine, convertimos guiones en pel&iacute;culas." />
-  <meta name="keywords" content="movie, script, Spain, guion, gui&oacuten;, emergentes, escaparate, guionistas, Espana" />
+  <meta name="keywords" content="movie, script, Spain, guion, emergentes, escaparate, guionistas, Espana" />
   <meta name="viewport" content="width=900" />
   <meta name='og:title' content='Boxoffice Script' />
   <meta name='og:type' content='website' />
