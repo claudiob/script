@@ -6,28 +6,26 @@
           // IE does not support window.fbAsyncInit, so it's called directly
           FB.init({appId: '177577225629525', status: true, cookie: true, xfbml: true});
           </script>
-          <fb:like href="http://boxofficescript.com" show_faces="true" width="450" font=""></fb:like>
+          <fb:like-box href="http://www.facebook.com/pages/Boxoffice-Script/176734525715662" width="292" show_faces="false" stream="false" header="true"></fb:like-box>
           <![endif]-->
           <!--[if !IE]><!-->
           <script type="text/javascript">
             window.fbAsyncInit = function() {
-              // Like Button
-              fan = document.createElement("fb:like")
-              fan.setAttribute("href", "http://boxofficescript.com")
-              fan.setAttribute("width", "450")
-              fan.setAttribute("show_faces", "false")
-              fan.setAttribute("layout", "button_count")
-              fan.setAttribute("font", "")
-              document.getElementById("facebook").appendChild(fan)
-              // Facebook!
-              FB.init({appId:'177577225629525', status: true, cookie: true, xfbml: true})
-              FB.XFBML.parse()
-            }
+              fan = document.createElement("fb:like-box");
+              fan.setAttribute("href", "http://www.facebook.com/pages/Boxoffice-Script/176734525715662");
+              fan.setAttribute("width", "292");
+              fan.setAttribute("show_faces", "false");
+              fan.setAttribute("stream", "false");
+              fan.setAttribute("header", "true");
+              document.getElementById("facebook").appendChild(fan);
+              FB.init({appId:'177577225629525', status: true, cookie: true, xfbml: true});
+              FB.XFBML.parse();
+            };
           </script>
           <!--<![endif]-->
         </div>
         <div id="twitter"></div>
-      <h1>F&iacute;n.</h1>
+      <!--h1>F&iacute;n.</h1-->
     </div>
     <script type="text/javascript">
     //<![CDATA[
