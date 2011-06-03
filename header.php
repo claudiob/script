@@ -13,7 +13,7 @@
   <meta name='og:title' content='Boxoffice Script' />
   <meta name='og:type' content='website' />
   <meta name='og:url' content='http://boxofficescript.com' />
-  <meta name='og:image' content='http://boxofficescript.com/img/boxofficescript_facebook_logo.png' />
+  <meta name='og:image' content='http://boxofficescript.com/img/boxofficescript_facebook_like.png' />
   <meta name='og:author' content='Pau Brunet' />
   <meta name='og:site_name' content='Boxoffice Script' />
   <meta name='fb:page_id' content='176734525715662' />
