@@ -1,9 +1,9 @@
 <?php
-$to      = 'claudiob@gmail.com';
+$to      = 'pau@boxofficescript.com';
 $subject = '[Boxoffice Script] ' . $_POST['email'] . ' quiere subscribirse';
 $message = $_POST['name'] . ' (' . $_POST['email'] . ')';
 $headers = 'From: ' . $_POST['email'] . "\r\n" .
-    'Reply-To: webmaster@example.com' . "\r\n" .
+    'Reply-To: info@boxofficescript.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
 mail($to, $subject, $message, $headers);
