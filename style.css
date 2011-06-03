@@ -61,6 +61,8 @@ input                       {padding-left: 3px; padding-right: 3px;}
 input[type='submit']        {padding-left: 1em; padding-right: 1em;}
 #signup-div input[type='submit']  {margin-left: 30px;}
 #signup-div input[type='text']    {width:230px;}
+#facebook                         {width: 90px;} 
+#twitter                          {width: 200px;}
 
 /* HEIGHT */
 h1, h2                      {margin-top: 30px; margin-bottom: 30px;}
@@ -71,9 +73,12 @@ h3                          {margin-top: 5px; margin-bottom: 5px}
 input                       {padding-top: 3px; padding-bottom: 3px;}
 input[type='submit']        {padding-top:5px; padding-bottom: 5px;}
 hr                          {height: 12px;}
+#facebook                   {height: 35px;} 
+#twitter                    {height: 20px;}
 
 /* LAYOUT */
-.coen, .coppola             {float: left;}
+.coen, .coppola, #facebook  {float: left;}
+#twitter                    {float: right;}
  .wilder                    {overflow: hidden;}
 label, input, hr, #logo     {clear: both;}
 legend                      {display: none;}
