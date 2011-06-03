@@ -42,8 +42,8 @@ a:visited                   {color: #85b;}
 input[type='submit']        {color: #fff; background:#368; background:-webkit-gradient(linear,0% 0,0% 100%,from(#368),to(#357));background:-moz-linear-gradient(0% 100% 90deg,#357,#368); -webkit-background-clip:padding-box;}
 input[type='submit']:hover  {background:#357; background:-webkit-gradient(linear,0% 0,0% 100%,from(#357),to(#245)); background:-moz-linear-gradient(0% 100% 90deg,#245,#357);}
 input[disabled]             {opacity:.3;}
-.success                    {background:url(../img/success.png) no-repeat top right;}
-hr                          {background: white url(../img/hr.png) no-repeat scroll 50% 50%; color: transparent;}
+.success                    {background:url(img/success.png) no-repeat top right;}
+hr                          {background: white url(img/hr.png) no-repeat scroll 50% 50%; color: transparent;}
 
 /* WIDTH */
 body, .allen                {margin-left: auto; margin-right: auto;}
@@ -63,14 +63,14 @@ input[type='submit']        {padding-left: 1em; padding-right: 1em;}
 #signup-div input[type='text']    {width:230px;}
 
 /* HEIGHT */
-h1, h2                      {margin-top: 45px; margin-bottom: 30px; }
+h1, h2                      {margin-top: 30px; margin-bottom: 30px;}
 img                         {padding-bottom: 40px;}
 .eastwood                   {padding-top: 20px; padding-bottom: 20px;}
 .wilder, .eastwood          {margin-bottom: 20px;}
 h3                          {margin-top: 5px; margin-bottom: 5px}
 input                       {padding-top: 3px; padding-bottom: 3px;}
 input[type='submit']        {padding-top:5px; padding-bottom: 5px;}
-hr                          {height: 12px; }
+hr                          {height: 12px;}
 
 /* LAYOUT */
 .coen, .coppola             {float: left;}
