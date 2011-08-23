@@ -103,17 +103,20 @@
       </fieldset>
       </form>
 
+      <script type="text/javascript" src="/uploadify/jquery-1.4.2.min.js"></script>
+      <script type="text/javascript" src="/uploadify/swfobject.js"></script>
+      <script type="text/javascript" src="/uploadify/jquery.uploadify.v2.1.4.min.js"></script>
       <script type="text/javascript">
       //<![CDATA[
       // Form validation
-      if(false) {    // DON'T COMMIT !!!!!! Remove once file upload works
       var form        = document.getElementById('submit-form')
       var form_title  = document.getElementById('submit-title')
       var form_name   = document.getElementById('submit-name')
       var form_email  = document.getElementById('submit-email')
       var form_submit = document.getElementById('submit-button')
+      var has_attachments = false
       // enable only if all fields validate
-      function toggleSubmit() {form_submit.disabled = !(isValidTitle() && isValidName() && isValidEmail())}
+      function toggleSubmit() {form_submit.disabled = !(isValidTitle() && isValidName() && isValidEmail() && has_attachments)}
       // check if the name is valid
       function isValidTitle() {return (form_title.value.length > 0)}
       function checkTitle() {
@@ -147,6 +150,8 @@
       var timer_email = ""
       form_email.onfocus = function() {timer_email = setInterval(checkEmail, 100)}
       form_email.onblur = function() {clearInterval(timer_email); checkEmail()}
+      // TODO: hook actions on the 'browse' button
+
       // submit the form with XHR
       form.onsubmit = function() {
         if (window.XMLHttpRequest)
@@ -164,11 +169,47 @@
             document.getElementById('submit-by-email').style.display = 'none'
           }
         }
-        xmlHttpRequest.send("title=" + this.title.value + "&name=" + this.name.value + "&email=" + this.email.value)
+        
+        request = "title=" + this.title.value + "&name=" + this.name.value + "&email=" + this.email.value
+        
+        $.each($(this).find("input[name^='attachment']"), function(i, v) {
+          request = request + "&" + v.name + "=" + v.value
+        })
+        
+        xmlHttpRequest.send(request)
         // And here attach the files!!! Yuippieee!!
         return false
       }
-      } // if false
+
+      $(function() {
+        $('#custom_file_upload').uploadify({
+          'uploader'       : '/uploadify/uploadify.swf',
+          'script'         : '/uploadify/uploadify.php',
+          'cancelImg'      : '/uploadify/cancel.png',
+          'folder'         : '/uploads',
+          'multi'          : true,
+          'auto'           : true,
+          'queueID'        : 'custom-queue',
+          'height'         : 25,
+          'width'          : 142,
+          'rollover'       : true,
+          'buttonImg'      : '/uploadify/selecciona.png',
+          'sizeLimit'      : 20000000,
+          'simUploadLimit' : 3,
+          'removeCompleted': false,
+          'onComplete'  : function(event, ID, fileObj, response, data) {
+            $('#submit-form fieldset').append('<input type="hidden" name="attachment-' + ID + '" value="' + fileObj.name + '" />');
+            has_attachments = true
+            toggleSubmit()
+          },
+          'onSelectOnce'   : function(event,data) {
+            $('#status-message').text(data.filesSelected + ' files have been added to the queue.');
+          },
+          'onAllComplete'  : function(event,data) {
+            $('#status-message').text(data.filesUploaded + ' files uploaded, ' + data.errors + ' errors.');
+          }
+        });				
+      });
       //]]>
       </script>
     </div>

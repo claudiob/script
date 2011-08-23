@@ -22,36 +22,4 @@
   <link href="img/favicon_iphone.png" rel="apple-touch-icon" />
 
   <link href="/uploadify/uploadify.css" type="text/css" rel="stylesheet" />
-  <script type="text/javascript" src="/uploadify/jquery-1.4.2.min.js"></script>
-  <script type="text/javascript" src="/uploadify/swfobject.js"></script>
-  <script type="text/javascript" src="/uploadify/jquery.uploadify.v2.1.4.min.js"></script>
-  <script type="text/javascript">
-  $(function() {
-    $('#custom_file_upload').uploadify({
-      'uploader'       : '/uploadify/uploadify.swf',
-      'script'         : '/uploadify/uploadify.php',
-      'cancelImg'      : '/uploadify/cancel.png',
-      'folder'         : '/uploads',
-      'multi'          : true,
-      'auto'           : true,
-      'queueID'        : 'custom-queue',
-      'height'         : 25,
-      'width'          : 142,
-      'rollover'       : true,
-      'buttonImg'      : '/uploadify/selecciona.png',
-      'sizeLimit'      : 20000000,
-      'simUploadLimit' : 3,
-      'removeCompleted': false,
-      'onComplete'  : function(event, ID, fileObj, response, data) {
-        $('#submit-form').append('<input type="hidden" name="attachment-' + ID + '" value="' + fileObj.name + '" />');
-      },
-      'onSelectOnce'   : function(event,data) {
-          $('#status-message').text(data.filesSelected + ' files have been added to the queue.');
-      },
-      'onAllComplete'  : function(event,data) {
-          $('#status-message').text(data.filesUploaded + ' files uploaded, ' + data.errors + ' errors.');
-      }
-    });				
-  });
-  </script>
   </head>
