@@ -27,7 +27,7 @@ $(function() {
     'simUploadLimit' : 3,
     'removeCompleted': false,
     'onComplete'  : function(event, ID, fileObj, response, data) {
-      $('#submit-form').append('<input type="hidden" name="attachment-' + ID + '" value="' + fileObj.name + '" />');
+      $('#submit-form').append('<input type="hidden" name="attachment-' + ID + '" value="' + fileObj.name + fileObj.type + '" />');
     },
     'onSelectOnce'   : function(event,data) {
         $('#status-message').text(data.filesSelected + ' files have been added to the queue.');
