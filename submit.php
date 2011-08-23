@@ -1,7 +1,6 @@
 <?php 
 
   $to      = 'pau@boxofficescript.com';
-  $to      = 'cbaccigalupo@gmail.com'; # DON'T COMMIT !!!!!
   $subject = '[Boxoffice Script] New script: ' . $_POST['title'];
   $random_hash = md5(date('r', time()));
   $headers = 'From: ' . $_POST['email'] . "\r\n" .
