@@ -1,9 +1,13 @@
 <?php 
-  $to = "cbaccigalupo@gmail.com";
-  $subject = "[Boxoffice Script] New script!";
+
+  $to      = 'pau@boxofficescript.com';
+  $to      = 'cbaccigalupo@gmail.com'; # DON'T COMMIT !!!!!
+  $subject = '[Boxoffice Script] New script: ' . $_POST['title'];
   $random_hash = md5(date('r', time()));
-  $headers = "From: noreply@boxofficescript.com\r\nReply-To: noreply@boxofficescript.com";
-  $headers .= "\r\nContent-Type: multipart/mixed; boundary=\"PHP-mixed-".$random_hash."\"";
+  $headers = 'From: ' . $_POST['email'] . "\r\n" .
+      'Reply-To: info@boxofficescript.com' . "\r\n" .
+      'X-Mailer: PHP/' . phpversion() . "\r\n" .
+      'Content-Type: multipart/mixed; boundary="PHP-mixed-'.$random_hash.'"';
   $output = "
 --PHP-mixed-$random_hash;
 Content-Type: multipart/alternative; boundary='PHP-alt-$random_hash'
@@ -26,10 +30,11 @@ Content-Transfer-Encoding: 7bit
   foreach ($_REQUEST as $key => $value) {
     if(substr($key, 0, 10) == 'attachment') {
       $attachment = chunk_split(base64_encode(file_get_contents("uploads/$value")));
+      // TODO: Change Content-Type appropriately!!!
       $output .= "
 
 --PHP-mixed-$random_hash
-Content-Type: application/zip; name=$value
+Content-Type: application/pdf; name=$value
 Content-Transfer-Encoding: base64
 Content-Disposition: attachment
 

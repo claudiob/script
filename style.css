@@ -103,7 +103,10 @@ input[type='submit']        {cursor:pointer;}
 
 /* TO INTEGRATE */
 
-#script_form label {width: 10em; float: left;}
+#submit-form label {width: 10em; float: left;}
+#submit-form object {margin-top: 10px;}
+#status-message {float: right; font-size: 0.8em;}
+
 textarea {border: 1px dotted #999;}
 
 
