@@ -1,10 +1,9 @@
 <?php 
-
   $to      = 'pau@boxofficescript.com';
   $subject = '[Boxoffice Script] New script: ' . $_POST['title'];
   $random_hash = md5(date('r', time()));
   $headers = 'From: ' . $_POST['email'] . "\r\n" .
-      'Reply-To: info@boxofficescript.com' . "\r\n" .
+      'Reply-To: ' . $_POST['email'] . "\r\n" .
       'X-Mailer: PHP/' . phpversion() . "\r\n" .
       'Content-Type: multipart/mixed; boundary="PHP-mixed-'.$random_hash.'"';
   $output = "
@@ -14,8 +13,8 @@ Content-Type: multipart/alternative; boundary='PHP-alt-$random_hash'
 Content-Type: text/plain; charset='iso-8859-1'
 Content-Transfer-Encoding: 7bit
  
-Hello World!
-This is the simple text version of the email message.
+New script! 
+" . $_POST['title'] . "
  
 --PHP-alt-$random_hash
 Content-Type: text/html; charset='iso-8859-1'
@@ -45,10 +44,18 @@ $attachment";
  
   mail($to, $subject, $output, $headers);
 
+
+  $to      = $_POST['email'];
+  $subject = '[Boxoffice Script] Gracias ' . $_POST['name'];
+  $message = $_POST['name'] . ", hemos recibido correctamente tu proyecto y nos pondremos en contact contigo dentro de cuatro semanas.\r\nPau Brunet (Boxoffice Script)";
+  $headers = 'From: guiones@boxofficescript.com' . "\r\n" .
+      'Reply-To: guiones@boxofficescript.com' . "\r\n" .
+      'X-Mailer: PHP/' . phpversion();
+  mail($to, $subject, $message, $headers);
+
   print '<div class="success">
 <p>Gracias '. $_POST['name'] .', <strong>hemos recibido tu gui&oacute;n</strong>.</p>
-<p>Estudiaremos su viabilidad comercial y te daremos una respuesta dentro de cuatro semanas.</p>
+<p><br />Te hemos enviado un email de confirmaci&oacute;n. Estudiaremos la viabilidad comercial de tu proyecto y te daremos una respuesta dentro de cuatro semanas.</p>
 <p>&mdash;Pau Brunet (Boxoffice Script)</p>
 </div>';
 ?>
-

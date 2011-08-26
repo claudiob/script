@@ -85,136 +85,32 @@
           <label for="email">E-mail:</label>
           <input id="submit-email" name="email" size="50" type="text" />
         </p>
-        <p>
+        <p class="indie">
           <label for="Filedata">Adjuntos:</label>
-          <input id="custom_file_upload" type="file" name="Filedata" style="margin-top: 5px" />      
+          <input id="custom_file_upload" type="file" name="Filedata" />      
           <span id="status-message"></span>
           <div id="custom-queue"></div>
-          Aseg&uacute;rate de incluir<sup>*</sup>: 
-          gui&oacute;n completo, 
-          sinopsis,
-          biograf&iacute;a del autor, 
-          documento que acredite la propiedad intelectual,
-          declaración del personal técnico/artístico a quien se haya solicitado participar al proyecto.<br />
         </p>
-        <p style="text-align: center">
+        <p class="bergman">
+         Aseg&uacute;rate de incluir (en multiples archivos o en un &uacute;nico fichero ZIP):<br />
+          <ol class="bergman">
+            <li>gui&oacute;n completo,</li> 
+            <li>sinopsis que incluya principio y final (m&aacute;ximo 2 hojas),</li>
+            <li>biograf&iacute;a del autor,</li>
+            <li>documento que acredite la propiedad intelectual,</li>
+            <li>declaración del personal a quien se haya solicitado participar al proyecto.</li>
+          </ol>
+        </p>
+        <p  class="indie c">
           <input id="submit-button" value="Env&iacute;a tu gui&oacute;n" type="submit" /> de acuerdo con las <a href="condiciones-generales.pdf" title="Condiciones Generales (PDF)">condiciones legales</a>.
         </p>
       </fieldset>
       </form>
 
-      <script type="text/javascript" src="/uploadify/jquery-1.4.2.min.js"></script>
-      <script type="text/javascript" src="/uploadify/swfobject.js"></script>
-      <script type="text/javascript" src="/uploadify/jquery.uploadify.v2.1.4.min.js"></script>
-      <script type="text/javascript">
-      //<![CDATA[
-      // Form validation
-      var form        = document.getElementById('submit-form')
-      var form_title  = document.getElementById('submit-title')
-      var form_name   = document.getElementById('submit-name')
-      var form_email  = document.getElementById('submit-email')
-      var form_submit = document.getElementById('submit-button')
-      var has_attachments = false
-      // enable only if all fields validate
-      function toggleSubmit() {form_submit.disabled = !(isValidTitle() && isValidName() && isValidEmail() && has_attachments)}
-      // check if the name is valid
-      function isValidTitle() {return (form_title.value.length > 0)}
-      function checkTitle() {
-        form_title.setAttribute("class", (isValidTitle() ? "right" : "wrong"))
-        toggleSubmit()
-      }
-      function isValidName() {return (form_name.value.length > 0)}
-      function checkName() {
-        form_name.setAttribute("class", (isValidName() ? "right" : "wrong"))
-        toggleSubmit()
-      }
-      // check if the email is valid
-      function isValidEmail() {return (/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(form_email.value))}
-      function checkEmail() {
-        form_email.setAttribute("class", (isValidEmail() ? "right" : "wrong"))
-        toggleSubmit()
-      }
-      // run the initial check upon loading
-      checkTitle()
-      checkName()
-      checkEmail()
-      // hook actions on the 'name' field
-      var timer_title = ""
-      form_title.onfocus = function() {timer_title = setInterval(checkTitle, 100)}
-      form_title.onblur = function() {clearInterval(timer_title); checkTitle()}
-      // hook actions on the 'name' field
-      var timer_name = ""
-      form_name.onfocus = function() {timer_name = setInterval(checkName, 100)}
-      form_name.onblur = function() {clearInterval(timer_name); checkName()}
-      // hook actions on the 'email' field
-      var timer_email = ""
-      form_email.onfocus = function() {timer_email = setInterval(checkEmail, 100)}
-      form_email.onblur = function() {clearInterval(timer_email); checkEmail()}
-      // TODO: hook actions on the 'browse' button
-
-      // submit the form with XHR
-      form.onsubmit = function() {
-        if (window.XMLHttpRequest)
-          xmlHttpRequest = new XMLHttpRequest()
-        else if (window.ActiveXObject)
-          xmlHttpRequest = new ActiveXObject("Microsoft.XMLHTTP");
-        else {// without XHR
-          return true
-        }
-        xmlHttpRequest.open(this.method, this.action, true);
-        xmlHttpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xmlHttpRequest.onreadystatechange = function() {
-          if (xmlHttpRequest.readyState == 4) { // Loaded, data transfer complete
-            document.getElementById('submit-div').innerHTML = xmlHttpRequest.responseText
-            document.getElementById('submit-by-email').style.display = 'none'
-          }
-        }
-        
-        request = "title=" + this.title.value + "&name=" + this.name.value + "&email=" + this.email.value
-        
-        $.each($(this).find("input[name^='attachment']"), function(i, v) {
-          request = request + "&" + v.name + "=" + v.value
-        })
-        
-        xmlHttpRequest.send(request)
-        // And here attach the files!!! Yuippieee!!
-        return false
-      }
-
-      $(function() {
-        $('#custom_file_upload').uploadify({
-          'uploader'       : '/uploadify/uploadify.swf',
-          'script'         : '/uploadify/uploadify.php',
-          'cancelImg'      : '/uploadify/cancel.png',
-          'folder'         : '/uploads',
-          'multi'          : true,
-          'auto'           : true,
-          'queueID'        : 'custom-queue',
-          'height'         : 25,
-          'width'          : 142,
-          'rollover'       : true,
-          'buttonImg'      : '/uploadify/selecciona.png',
-          'sizeLimit'      : 20000000,
-          'simUploadLimit' : 3,
-          'removeCompleted': false,
-          'onComplete'  : function(event, ID, fileObj, response, data) {
-            $('#submit-form fieldset').append('<input type="hidden" name="attachment-' + ID + '" value="' + fileObj.name + '" />');
-            has_attachments = true
-            toggleSubmit()
-          },
-          'onSelectOnce'   : function(event,data) {
-            $('#status-message').text(data.filesSelected + ' files have been added to the queue.');
-          },
-          'onAllComplete'  : function(event,data) {
-            $('#status-message').text(data.filesUploaded + ' files uploaded, ' + data.errors + ' errors.');
-          }
-        });				
-      });
-      //]]>
-      </script>
+      <script type="text/javascript" src="script.js"></script>
     </div>
    <div class="nolan" id="submit-by-email">
-     <p><sup>*</sup>Si lo encuentras m&aacute;s pr&aacute;ctico, tambi&eacute;n puedes enviar el material por email a guiones@boxofficescript.com.</p>
+     <p>Si lo encuentras m&aacute;s pr&aacute;ctico, tambi&eacute;n puedes enviar el material por email a guiones@boxofficescript.com.</p>
    </div>
      
 <?php require("footer.php"); ?>
