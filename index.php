@@ -28,7 +28,7 @@
        </div>
        <div class="wilder">
          <span class="coppola">3</span>
-         <h3>Te llevamos hasta el final</h3>
+         <h3>Te acompa&ntilde;amos hasta el final</h3>
          <p>Otras agencias cobran s&oacute;lo para &lsquo;revisar&rsquo; tu gui&oacute;n. Nosotros lo movemos entre productoras para que se convierta en pel&iacute;cula.</p>
        </div>
        <div class="wilder">
