@@ -74,34 +74,34 @@
       <fieldset class="credentials">
         <legend>Formulario</legend>
         <p>
-          <label for="title">T&iacute;tulo:</label>
+          <label for="submit-title">T&iacute;tulo:</label>
           <input id="submit-title" name="title" size="50" type="text" />
         </p>
         <p>
-          <label for="name">Autor:</label>
+          <label for="submit-name">Autor:</label>
           <input id="submit-name" name="name" size="50" type="text" />
         </p>
         <p>
-          <label for="email">E-mail:</label>
+          <label for="submit-email">E-mail:</label>
           <input id="submit-email" name="email" size="50" type="text" />
         </p>
         <p class="indie">
-          <label for="Filedata">Adjuntos:</label>
+          <label for="custom_file_upload">Adjuntos:</label>
           <input id="custom_file_upload" type="file" name="Filedata" />      
           <span id="status-message"></span>
-          <div id="custom-queue"></div>
+          <span id="custom-queue"></span>
         </p>
         <p class="bergman">
          Aseg&uacute;rate de incluir (en multiples archivos o en un &uacute;nico fichero ZIP):<br />
-          <ol class="bergman">
-            <li>gui&oacute;n completo,</li> 
-            <li>sinopsis que incluya principio y final (m&aacute;ximo 2 hojas),</li>
-            <li>biograf&iacute;a del autor,</li>
-            <li>documento que acredite la propiedad intelectual,</li>
-            <li>declaración del personal a quien se haya solicitado participar al proyecto.</li>
-          </ol>
         </p>
-        <p  class="indie c">
+        <ol class="bergman">
+          <li>gui&oacute;n completo,</li> 
+          <li>sinopsis que incluya principio y final (m&aacute;ximo 2 hojas),</li>
+          <li>biograf&iacute;a del autor,</li>
+          <li>documento que acredite la propiedad intelectual,</li>
+          <li>declaración del personal a quien se haya solicitado participar al proyecto.</li>
+        </ol>
+        <p class="indie c">
           <input id="submit-button" value="Env&iacute;a tu gui&oacute;n" type="submit" /> de acuerdo con las <a href="condiciones-generales.pdf" title="Condiciones Generales (PDF)">condiciones legales</a>.
         </p>
       </fieldset>
