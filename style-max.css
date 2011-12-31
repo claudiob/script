@@ -44,6 +44,7 @@ input[type='submit']        {color: #fff; background:#09c; background:-webkit-gr
 input[type='submit']:hover  {background:#07a; background:-webkit-gradient(linear,0% 0,0% 100%,from(#29c),to(#258)); background:-moz-linear-gradient(0% 100% 90deg,#29c,#258);filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#29c', endColorstr='#258');}
 input[disabled]             {opacity:.3;}
 .success                    {background:url(img/success.png) no-repeat top right;}
+.paused                     {background:url(img/form.png) no-repeat top right; padding-top: 268px;}
 hr                          {background: white url(img/hr.png) no-repeat scroll 50% 50%; color: transparent;}
 
 /* WIDTH */

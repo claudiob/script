@@ -66,51 +66,11 @@
      </div>
 
     <hr />
-    <h1>Env&iacute;anos tu gui&oacute;n. En Courier 12 doble espacio, por supuesto.</h1>
-
-    <div class="eastwood" id="submit-div">
-
-      <form enctype="multipart/form-data" action="submit.php" id="submit-form" method="post">
-      <fieldset class="credentials">
-        <legend>Formulario</legend>
-        <p>
-          <label for="submit-title">T&iacute;tulo:</label>
-          <input id="submit-title" name="title" size="50" type="text" />
-        </p>
-        <p>
-          <label for="submit-name">Autor:</label>
-          <input id="submit-name" name="name" size="50" type="text" />
-        </p>
-        <p>
-          <label for="submit-email">E-mail:</label>
-          <input id="submit-email" name="email" size="50" type="text" />
-        </p>
-        <p class="indie">
-          <label for="custom_file_upload">Adjuntos:</label>
-          <input id="custom_file_upload" type="file" name="Filedata" />      
-          <span id="status-message"></span>
-          <span id="custom-queue"></span>
-        </p>
-        <p class="bergman">
-         Aseg&uacute;rate de incluir (en multiples archivos o en un &uacute;nico fichero ZIP):<br />
-        </p>
-        <ol class="bergman">
-          <li>gui&oacute;n completo,</li> 
-          <li>sinopsis que incluya principio y final (m&aacute;ximo 2 hojas),</li>
-          <li>biograf&iacute;a del autor,</li>
-          <li>documento que acredite la propiedad intelectual,</li>
-          <li>declaración del personal a quien se haya solicitado participar al proyecto.</li>
-        </ol>
-        <p class="indie c">
-          <input id="submit-button" value="Env&iacute;a tu gui&oacute;n" type="submit" /> de acuerdo con las <a href="condiciones-generales.pdf" title="Condiciones Generales (PDF)">condiciones legales</a>.
-        </p>
-      </fieldset>
-      </form>
-
-      <script type="text/javascript" src="script.js"></script>
+    <h1>Lo sentimos.<br /> No podemos aceptar m&aacute;s guiones.</h1>
+    <div class="paused">
+      <h2>Dada la avalancha de guiones que nos ha llegado en 2011, nos vemos obligados a cerrar el primer periodo de aceptaci&oacute;n de proyectos.</h2>
+      <h2>Ahora toca el momento de trabajar m&aacute;s detalladamente sobre los guiones que vamos a mover en el mercado, con muy buen feeling con las empresas productoras, todas muy interesadas ver que ha salido de esta cosecha.</h2>
+      <h2>Esperamos en breve volver a aceptar proyectos.</h2>
     </div>
-   <div class="nolan" id="submit-by-email">
-     <p>Si lo encuentras m&aacute;s pr&aacute;ctico, tambi&eacute;n puedes enviar el material por email a guiones@boxofficescript.com.</p>
-   </div>
      
 <?php require("footer.php"); ?>
